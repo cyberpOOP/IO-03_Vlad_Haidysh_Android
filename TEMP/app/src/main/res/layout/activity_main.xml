@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="380dp"
+        android:layout_height="108dp"
+        android:text="@string/TextView"
+        android:textColor="@color/black"
+        android:textSize="8pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951" />
+
+    <RadioGroup
+        android:id="@+id/RadioSize"
+        android:layout_width="173dp"
+        android:layout_height="144dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/RadioSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/small_bunch"
+            android:textSize="8pt" />
+
+        <RadioButton
+            android:id="@+id/RadioMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/medium_bunch"
+            android:textSize="8pt" />
+
+        <RadioButton
+            android:id="@+id/RadioBig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/big_bunch"
+            android:textSize="8pt" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/ButtonOK"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/RadioColor"
+        android:layout_width="137dp"
+        android:layout_height="145dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/RadioSize"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/RadioRed"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/red"
+            android:textSize="8pt"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <RadioButton
+            android:id="@+id/RadioYellow"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/yellow"
+            android:textSize="8pt" />
+
+        <RadioButton
+            android:id="@+id/RadioBlack"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/black"
+            android:textSize="8pt" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/TextField"
+        android:layout_width="380dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/TextField"
+        android:textSize="10pt"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:text=""
+        android:textColorHint="#454545"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
