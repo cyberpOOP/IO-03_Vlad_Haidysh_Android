@@ -14,12 +14,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    RadioGroup ColorGroup;
-    RadioGroup BunchGroup;
-    RadioButton ColorButton;
-    RadioButton BunchButton;
-    TextView TextRes;
-    EditText Text;
+    private RadioGroup ColorGroup;
+    private RadioGroup BunchGroup;
+    private RadioButton ColorButton;
+    private RadioButton BunchButton;
+    private TextView TextRes;
+    private EditText Text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
