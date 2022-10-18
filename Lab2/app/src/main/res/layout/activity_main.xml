@@ -7,9 +7,9 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="412dp"
-        android:layout_height="285dp"
+        android:id="@+id/frame_result"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
@@ -18,19 +18,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        app:layout_constraintTop_toBottomOf="@+id/frame_input">
 
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="406dp"
-        android:layout_height="341dp"
+        android:id="@+id/frame_input"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/frame_layout"
+        app:layout_constraintBottom_toTopOf="@+id/frame_result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
