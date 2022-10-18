@@ -14,33 +14,33 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RadioGroup ColorGroup;
-    private RadioGroup BunchGroup;
-    private RadioButton ColorButton;
-    private RadioButton BunchButton;
-    private TextView TextRes;
-    private EditText Text;
+    private RadioGroup colorGroup;
+    private RadioGroup bunchGroup;
+    private RadioButton colorButton;
+    private RadioButton bunchButton;
+    private TextView textRes;
+    private EditText text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ColorGroup = findViewById(R.id.RadioColor);
-        BunchGroup = findViewById(R.id.RadioSize);
+        colorGroup = findViewById(R.id.RadioColor);
+        bunchGroup = findViewById(R.id.RadioSize);
 
-        Button ButtonOK = findViewById(R.id.button);
-        TextRes = findViewById(R.id.textView);
-        Text = findViewById(R.id.TextField);
+        Button buttonOK = findViewById(R.id.button);
+        textRes = findViewById(R.id.textView);
+        text = findViewById(R.id.TextField);
 
-        ButtonOK.setOnClickListener(new View.OnClickListener() {
+        buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int mass[] = new int[3];
                 boolean let = true;
-                mass[0] = Text.getText().length();
-                mass[1] = ColorGroup.getCheckedRadioButtonId();
-                mass[2] = (int)BunchGroup.getCheckedRadioButtonId()-1;
+                mass[0] = text.getText().length();
+                mass[1] = colorGroup.getCheckedRadioButtonId();
+                mass[2] = (int) bunchGroup.getCheckedRadioButtonId()-1;
 
 
                 //TextRes.setText(mass[0]+" "+mass[1]+" "+mass[2]);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         case 0:
                             Toast.makeText(getApplicationContext(), "Comment is empty",
                                     Toast.LENGTH_SHORT).show();
-                            TextRes.setText(R.string.TextView);
+                            textRes.setText(R.string.TextView);
                             let = false;
                             break;
                         case -1:
@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 if(let){
-                    ColorButton = findViewById(ColorGroup.getCheckedRadioButtonId());
-                    BunchButton = findViewById(BunchGroup.getCheckedRadioButtonId());
-                    int PriceId = BunchGroup.getCheckedRadioButtonId();
+                    colorButton = findViewById(colorGroup.getCheckedRadioButtonId());
+                    bunchButton = findViewById(bunchGroup.getCheckedRadioButtonId());
+                    int PriceId = bunchGroup.getCheckedRadioButtonId();
                     String price ="";
                     String order;
                     switch(PriceId){
@@ -85,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
                             price ="10$";
                             break;
                     }
-                    order = BunchButton.getText().toString()+" of " +
-                            ColorButton.getText().toString()+" roses.";
-                    TextRes.setText("Your Order is:\n"+order+"\n"+
-                            "Your Comment:\n"+Text.getText()+"\nPrice: "+price);
+                    order = bunchButton.getText().toString()+" of " +
+                            colorButton.getText().toString()+" roses.";
+                    textRes.setText("Your Order is:\n"+order+"\n"+
+                            "Your Comment:\n"+text.getText()+"\nPrice: "+price);
                     //TextRes.setText(""+BunchGroup.getCheckedRadioButtonId());
                 }
 
