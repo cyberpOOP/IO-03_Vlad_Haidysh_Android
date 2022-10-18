@@ -2,9 +2,9 @@
     <string name="app_name">TEMP</string>
     <string name="TextView">Order Info will be right here</string>
     <string name="TextField">Write down your comment for the order (necessarily)*</string>
-    <string name="small_bunch">Small Bunch</string>
-    <string name="medium_bunch">Medium Bunch</string>
-    <string name="big_bunch">Big Bunch</string>
+    <string name="small_bunch">Small Bunch 20$</string>
+    <string name="medium_bunch">Medium Bunch 30$</string>
+    <string name="big_bunch">Big Bunch 40$</string>
     <string name="ButtonOK">OK</string>
     <string name="red">Red</string>
     <string name="yellow">Yellow</string>

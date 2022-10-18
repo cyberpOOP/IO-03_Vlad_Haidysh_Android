@@ -22,8 +22,8 @@
 
     <RadioGroup
         android:id="@+id/RadioSize"
-        android:layout_width="173dp"
-        android:layout_height="144dp"
+        android:layout_width="211dp"
+        android:layout_height="143dp"
         android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
