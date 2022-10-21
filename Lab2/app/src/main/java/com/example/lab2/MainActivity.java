@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     InputFragment fragmentInput = new InputFragment();
     ResultFragment fragmentResult = new ResultFragment();
+    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +34,9 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.frame_input, fragmentInput);
         transaction.replace(R.id.frame_result, fragmentResult);
         transaction.commit();
+    }
+
+    public void SetText(String text){
+        this.text = text;
     }
 }
