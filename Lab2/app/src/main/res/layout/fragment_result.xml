@@ -9,7 +9,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="227dp"
-        android:gravity="center|top"
+        android:gravity="left|top"
         android:paddingTop="20dp"
         android:text="@string/TextView"
         android:textColor="@color/black"
