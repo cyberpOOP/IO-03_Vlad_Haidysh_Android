@@ -39,58 +39,53 @@ public class InputFragment extends Fragment {
 
         StringBuilder finalText = new StringBuilder();
 
-        MainActivity activity = new MainActivity();
+        buttonOK.setOnClickListener(view1 -> {
+            int[] arr = new int[3];
+            boolean let = true;
+            arr[0] = text.getText().length();
+            arr[1] = groupColor.getCheckedRadioButtonId();
+            arr[2] = groupBunch.getCheckedRadioButtonId();
 
-        buttonOK.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                int[] arr = new int[3];
-                boolean let = true;
-                arr[0] = text.getText().length();
-                arr[1] = groupColor.getCheckedRadioButtonId();
-                arr[2] = groupBunch.getCheckedRadioButtonId();
+            for(int i :arr){
+                switch (i){
+                    case 0:
+                        Toast.makeText(getContext(), "Comment is empty",
+                                Toast.LENGTH_SHORT).show();
+                        let = false;
+                        break;
 
-                for(int i :arr){
-                    switch (i){
-                        case 0:
-                            Toast.makeText(getContext(), "Comment is empty",
-                                    Toast.LENGTH_SHORT).show();
-                            let = false;
-                            break;
-
-                        case -1:
-                            Toast.makeText(getContext(), "Some radiobutton isn't checked",
-                                    Toast.LENGTH_SHORT).show();
-                            let = false;
-                            break;
-                    }
-                    if(!let) break;
+                    case -1:
+                        Toast.makeText(getContext(), "Some radiobutton isn't checked",
+                                Toast.LENGTH_SHORT).show();
+                        let = false;
+                        break;
                 }
-
-                if(let){
-                    RadioButton bunch = null;
-                    RadioButton color = null;
-                    for(RadioButton i : bunchButtons){
-                        if(i.getId() == groupBunch.getCheckedRadioButtonId())
-                            bunch = i;
-                        if(i.getId() == groupColor.getCheckedRadioButtonId())
-                            color = i;
-                    }
-                    //fix this somehow
-                    finalText.append(getResources().getString(R.string.Order));
-                    assert bunch != null;
-                    finalText.append(bunch.getText().toString());
-                    finalText.append(" of ");
-                    assert color != null;
-                    finalText.append(color.getText().toString());
-                    finalText.append(" roses\n");
-                    finalText.append(getResources().getString(R.string.Comment));
-                    finalText.append(text.getText().toString());
-
-                    activity.SetText(finalText.toString());
-                }
-
+                if(!let) break;
             }
+
+            if(let){
+                RadioButton bunch = null;
+                RadioButton color = null;
+                for(RadioButton i : bunchButtons){
+                    if(i.getId() == groupBunch.getCheckedRadioButtonId())
+                        bunch = i;
+                    if(i.getId() == groupColor.getCheckedRadioButtonId())
+                        color = i;
+                }
+                //fix this somehow
+                finalText.append(getResources().getString(R.string.Order));
+                assert bunch != null;
+                finalText.append(bunch.getText().toString());
+                finalText.append(" of ");
+                assert color != null;
+                finalText.append(color.getText().toString());
+                finalText.append(" roses\n");
+                finalText.append(getResources().getString(R.string.Comment));
+                finalText.append(text.getText().toString());
+
+                ((MainActivity)getActivity()).SetText(finalText.toString());
+            }
+
         });
     }
 }
