@@ -18,7 +18,7 @@
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/radioColor"
-            app:layout_constraintTop_toBottomOf="@+id/textInputEditText">
+            app:layout_constraintTop_toBottomOf="@+id/textEdit">
 
             <RadioButton
                 android:id="@+id/radioSmall"
@@ -47,7 +47,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toStartOf="@+id/radioBunch"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputEditText">
+            app:layout_constraintTop_toBottomOf="@+id/textEdit">
 
             <RadioButton
                 android:id="@+id/radioRed"
@@ -68,15 +68,18 @@
                 android:text="@string/black" />
         </RadioGroup>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
+        <EditText
+            android:id="@+id/textEdit"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:hint="@string/TextField"
             android:textColorHint="#757575"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck"/>
 
         <Button
             android:id="@+id/button"
@@ -88,7 +91,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputEditText"
+            app:layout_constraintTop_toBottomOf="@+id/textEdit"
             app:layout_constraintVertical_bias="0.123" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
