@@ -4,22 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity {
 
     InputFragment fragmentInput = new InputFragment();
     ResultFragment fragmentResult = new ResultFragment();
-    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SetText(String text){
-        this.text = text;
+        fragmentResult.SetText(text);
     }
+
 }

@@ -9,7 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
 public class ResultFragment extends Fragment {
+
+    TextView text;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -17,4 +20,13 @@ public class ResultFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_result, container, false);
     }
 
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        text = view.findViewById(R.id.textView);
+    }
+
+    public void SetText(String res){
+        text.setText(res);
+    }
 }
