@@ -26,7 +26,7 @@ public class ResultFragment extends Fragment {
         text = view.findViewById(R.id.textView);
     }
 
-    public void SetText(String res){
+    public void setText(String res){
         text.setText(res);
     }
 }

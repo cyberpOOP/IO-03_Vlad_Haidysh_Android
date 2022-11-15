@@ -17,18 +17,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SetFragments();
+        setFragments();
     }
 
-    private void SetFragments() {
+    private void setFragments() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_input, fragmentInput);
         transaction.replace(R.id.frame_result, fragmentResult);
         transaction.commit();
     }
 
-    public void SetText(String text){
-        fragmentResult.SetText(text);
+    public void setText(String text){
+        fragmentResult.setText(text);
     }
 
 }

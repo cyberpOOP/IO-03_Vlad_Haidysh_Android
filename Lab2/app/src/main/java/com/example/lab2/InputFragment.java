@@ -83,7 +83,7 @@ public class InputFragment extends Fragment {
                 finalText.append(getResources().getString(R.string.Comment));
                 finalText.append(text.getText().toString());
 
-                ((MainActivity)getActivity()).SetText(finalText.toString());
+                ((MainActivity)getActivity()).setText(finalText.toString());
             }
 
         });
