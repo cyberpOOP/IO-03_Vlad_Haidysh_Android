@@ -27,6 +27,7 @@ public class ResultFragment extends Fragment {
     }
 
     public void setText(String res){
+        text.setText("");
         text.setText(res);
     }
 }

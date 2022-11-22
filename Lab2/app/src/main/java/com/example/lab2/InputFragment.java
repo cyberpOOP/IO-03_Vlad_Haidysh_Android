@@ -73,6 +73,7 @@ public class InputFragment extends Fragment {
                         color = i;
                 }
                 //fix this somehow
+                finalText.setLength(0);
                 finalText.append(getResources().getString(R.string.Order));
                 assert bunch != null;
                 finalText.append(bunch.getText().toString());
