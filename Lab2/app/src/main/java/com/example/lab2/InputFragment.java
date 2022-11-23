@@ -1,5 +1,6 @@
 package com.example.lab2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -28,6 +29,7 @@ public class InputFragment extends Fragment {
         RadioGroup groupColor = view.findViewById(R.id.radioColor);
         RadioGroup groupBunch = view.findViewById(R.id.radioBunch);
         Button buttonOK = view.findViewById(R.id.button);
+        Button buttonOpen = view.findViewById(R.id.button2);
 
         RadioButton[] bunchButtons = new RadioButton[6];
         bunchButtons[0] = view.findViewById(R.id.radioSmall);
@@ -85,8 +87,22 @@ public class InputFragment extends Fragment {
                 finalText.append(text.getText().toString());
 
                 ((MainActivity)getActivity()).setText(finalText.toString());
+
             }
 
         });
+
+        buttonOpen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openStorage();
+            }
+        });
+    }
+
+
+    private void openStorage(){
+        Intent intent = new Intent((MainActivity)getActivity(), Storage.class);
+        startActivity(intent);
     }
 }
