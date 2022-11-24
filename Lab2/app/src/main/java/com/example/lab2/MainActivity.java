@@ -3,13 +3,11 @@ package com.example.lab2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,35 +16,18 @@ public class MainActivity extends AppCompatActivity {
     InputFragment fragmentInput = new InputFragment();
     ResultFragment fragmentResult = new ResultFragment();
 
-    File index;
     File path;
-
-    String filename, fileIndex = "index.txt", indexNumber;
-    int i;
+    String filename;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        path = getApplicationContext().getFilesDir();
-        index = new File(path, fileIndex);
-
-        if(index.exists()){
-            indexNumber = storage.loadFile(MainActivity.this, path, fileIndex);
-            i = Integer.parseInt(indexNumber);
-        }
-
-       else
-            storage.saveFile(MainActivity.this, path, fileIndex,"0", false);
+        path = getExternalFilesDir(null);
+        filename = "Flowers_Order.txt";
 
         setFragments();
-    }
-
-    @Override
-    protected  void onDestroy() {
-        super.onDestroy();
-        storage.saveFile(MainActivity.this, path, fileIndex, Integer.toString(i), false);
     }
 
     private void setFragments() {
@@ -57,12 +38,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setText(String text){
-        filename = "Flowers_Order_"+ i + ".txt";
-        i++;
-        storage.saveFile(MainActivity.this,path,  filename, text, true);
+        storage.saveFile(MainActivity.this, path, filename, text);
         fragmentResult.setText(text);
-
     }
 
+    public void openStorage(){
+        File file = new File(path, filename);
+        if(file.exists()){
+            Intent intent = new Intent(MainActivity.this, Storage.class);
+            startActivity(intent);
+        }
+        else
+            Toast.makeText(MainActivity.this, "No file to load", Toast.LENGTH_SHORT).show();
 
+    }
 }

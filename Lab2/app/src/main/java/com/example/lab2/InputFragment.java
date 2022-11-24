@@ -95,14 +95,8 @@ public class InputFragment extends Fragment {
         buttonOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openStorage();
+                ((MainActivity)getActivity()).openStorage();
             }
         });
-    }
-
-
-    private void openStorage(){
-        Intent intent = new Intent((MainActivity)getActivity(), Storage.class);
-        startActivity(intent);
     }
 }
