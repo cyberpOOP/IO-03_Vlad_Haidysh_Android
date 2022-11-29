@@ -1,6 +1,5 @@
 package com.example.lab2;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;

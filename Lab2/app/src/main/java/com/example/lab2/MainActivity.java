@@ -16,16 +16,11 @@ public class MainActivity extends AppCompatActivity {
     InputFragment fragmentInput = new InputFragment();
     ResultFragment fragmentResult = new ResultFragment();
 
-    File path;
-    String filename;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        path = getExternalFilesDir(null);
-        filename = "Flowers_Order.txt";
 
         setFragments();
     }
@@ -38,18 +33,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setText(String text){
-        storage.saveFile(MainActivity.this, path, filename, text);
+        storage.saveFile(this, text);
         fragmentResult.setText(text);
     }
 
     public void openStorage(){
-        File file = new File(path, filename);
-        if(file.exists()){
-            Intent intent = new Intent(MainActivity.this, Storage.class);
-            startActivity(intent);
-        }
-        else
-            Toast.makeText(MainActivity.this, "No file to load", Toast.LENGTH_SHORT).show();
-
+        Intent intent = new Intent(MainActivity.this, TextOutput.class);
+        startActivity(intent);
     }
 }

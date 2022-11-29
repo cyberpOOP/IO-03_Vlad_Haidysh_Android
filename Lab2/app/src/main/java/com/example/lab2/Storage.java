@@ -1,10 +1,6 @@
 package com.example.lab2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -12,31 +8,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class Storage extends AppCompatActivity {
+public class Storage {
 
-    File path;
-    String filename;
-    TextView text;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_storage);
+    String filename = "Flowers_Order.txt";
 
-        path = getExternalFilesDir(null);
-        filename = "Flowers_Order.txt";
-        text = findViewById(R.id.textView2);
-        /*File path = getExternalFilesDir(null);
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        Toast.makeText(this, path.toString()+"/", Toast.LENGTH_LONG).show();
-        Uri uri = Uri.parse(path.toString());
-        intent.setDataAndType(uri, "");
-        startActivity(Intent.createChooser(intent, "Open folder"));*/
-
-        text.setText(loadFile());
-    }
-
-    public void saveFile(Context context, File path, String filename, String text) {
+    public void saveFile(Context context, String text) {
+        File path = context.getExternalFilesDir(null);
         try {
             FileOutputStream fos = new FileOutputStream(new File(path, filename));
             fos.write(text.getBytes());
@@ -48,7 +26,8 @@ public class Storage extends AppCompatActivity {
         }
     }
 
-    public String loadFile() {
+    public String loadFile(Context context) {
+        File path = context.getExternalFilesDir(null);
         File file = new File(path, filename);
 
         byte[] content = new byte[(int) file.length()];
@@ -63,4 +42,14 @@ public class Storage extends AppCompatActivity {
 
         return txt;
     }
+
+    public boolean checkStorage(Context context){
+        File path = context.getExternalFilesDir(null);
+        File file = new File(path, filename);
+        if(file.exists())
+            return true;
+         return false;
+    }
 }
+
+

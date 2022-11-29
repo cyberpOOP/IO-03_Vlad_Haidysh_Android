@@ -11,5 +11,6 @@
     <string name="black">Black</string>
     <string name="Order">Your order is:\n</string>
     <string name="Comment">Your comment is:\n</string>
-    <string name="Open">Open File</string>
+    <string name="Open">Open</string>
+    <string name="empty">Storage is empty</string>
 </resources>
