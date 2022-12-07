@@ -29,11 +29,12 @@ public class Video extends Fragment {
 
         VideoView video = view.findViewById(R.id.video);
 
-        /*video.setMediaController(new MediaController(getContext()));
+        video.setMediaController(new MediaController(getContext()));
 
-        String uriPath = "android.resource://" + getContext().getPackageName() + "/" + R.raw.video;
+        /*String uriPath = "android.resource://" + getContext().getPackageName() + "/" + R.raw.video;
         Uri uri = Uri.parse(uriPath);
         video.setVideoURI(uri);
         video.start();*/
+
     }
 }
