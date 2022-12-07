@@ -40,7 +40,7 @@ public class Audio extends Fragment {
         if (player == null) {
             player = MediaPlayer.create(getContext(), R.raw.audio);
             player.setOnCompletionListener(
-                    mp -> stopPlayer());
+                    mp -> stopPlayer(0));
         }
         player.start();
 
@@ -50,7 +50,7 @@ public class Audio extends Fragment {
 
         back.setOnClickListener(view1 -> stop());
         pause.setOnClickListener(view2 -> pause());
-        forward.setOnClickListener(view3 -> stopPlayer());
+        forward.setOnClickListener(view3 -> stopPlayer(0));
     }
 
     public void pause() {
@@ -73,13 +73,18 @@ public class Audio extends Fragment {
         pause.setImageResource(android.R.drawable.ic_media_play);
     }
 
-    private void stopPlayer() {
+    private void stopPlayer(int n) {
         if (player != null) {
             player.release();
             player = null;
-            Toast.makeText(getContext(), "Song ends", Toast.LENGTH_SHORT).show();
-
+            if(n == 0)
+                Toast.makeText(getContext(), "Song ends", Toast.LENGTH_SHORT).show();
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        stopPlayer(-1);
+    }
 }

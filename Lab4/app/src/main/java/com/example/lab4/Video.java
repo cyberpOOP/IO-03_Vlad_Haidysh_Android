@@ -24,17 +24,19 @@ public class Video extends Fragment {
         return inflater.inflate(R.layout.fragment_video, container, false);
     }
 
+    VideoView video;
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        VideoView video = view.findViewById(R.id.video);
+        video = view.findViewById(R.id.videoView);
 
         video.setMediaController(new MediaController(getContext()));
 
-        /*String uriPath = "android.resource://" + getContext().getPackageName() + "/" + R.raw.video;
+        String uriPath = "android.resource://" + getContext().getPackageName() + "/" + R.raw.video;
         Uri uri = Uri.parse(uriPath);
         video.setVideoURI(uri);
-        video.start();*/
+        video.start();
 
     }
 }
