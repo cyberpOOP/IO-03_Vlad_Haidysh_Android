@@ -24,20 +24,20 @@
         <Button
             android:id="@+id/video"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:text="@string/video" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/audio"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/audio" />
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:layout_marginStart="10dp"
